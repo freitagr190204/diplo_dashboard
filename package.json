@@ -1,0 +1,71 @@
+{
+  "name": "angular20",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "ng serve",
+    "swag": "openapi-generator-cli generate --generator-key angular",
+    "swagWithClean": "rimraf src/app/swagger && openapi-generator-cli generate --generator-key angular",
+    "cleanSwag": "rimraf src/app/swagger",
+    "signalrGen": "signalr-gen",
+    "build": "ng build",
+    "electron": "ng build && electron .",
+    "dist": "ng build --configuration production && electron-builder"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/cdk": "20.0.3",
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/forms": "^20.0.0",
+    "@angular/material": "20.0.3",
+    "@angular/platform-browser": "^20.0.0",
+    "@angular/router": "^20.0.0",
+    "@microsoft/signalr": "^8.0.7",
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1",
+    "cors": "^2.8.5",
+    "rxjs": "~7.8.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss": "^4.1.10",
+    "tslib": "^2.3.0",
+    "ws": "^8.18.3",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.0.2",
+    "@angular/cli": "^20.0.2",
+    "@angular/compiler-cli": "^20.0.0",
+    "@openapitools/openapi-generator-cli": "^2.20.2",
+    "@types/jasmine": "~5.1.0",
+    "electron": "^39.2.3",
+    "electron-builder": "^26.8.1",
+    "jasmine-core": "~5.7.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "rgrueneis-signalr-gen": "^2.5.1",
+    "rimraf": "^6.0.1",
+    "typescript": "~5.8.2"
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "com.yourcompany.gamelauncher",
+    "productName": "GameLauncher",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "dist/angular20/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

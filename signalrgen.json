@@ -1,0 +1,5 @@
+{
+  "analyzerUri": "http://localhost:5000/hubanalyzer",
+  "relativeTargetPath": "./src/app/signalrbridge",
+  "type": "angular"
+}
